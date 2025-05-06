@@ -7,7 +7,7 @@ import javax.mail.Store;
 
 import com.testing.framework.EmailUtils;
 
-public class ExtractOTPFromGmail {
+public class ExtractContentFromUnreadGmail {
 	public static void main(String[] args) throws Exception{
 		EmailUtils emailUtils = new EmailUtils();
 		Properties prop = new Properties();
@@ -17,7 +17,7 @@ public class ExtractOTPFromGmail {
 		prop.setProperty("gmail_from", "aishu.rap22@gmail.com");
 		Store connection = emailUtils.connectToGmail(prop);
 
-		List<String> emailtext = emailUtils.getUnreadMessageByFromEmail(connection, "Inbox", "hello@duolingo.com", "🥳 Happy 5th Duoversary, Aish!");
+		List<String> emailtext = emailUtils.getUnreadMessageByFromEmail(connection, "Inbox", "info@artstoheartsproject.com", "Emerging Woman Artist Award Art Prize");
 		if(emailtext.size()<1)
 			throw new Exception("No Email received");
 		else
